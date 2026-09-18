@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Яндекс — найдётся всё</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        a {
+            color: #0645ad;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #551a8b;
+        }
+
+        .page {
+            width: 780px;
+            margin: 8px auto 0;
+        }
+
+        /* =========================
+           ВЕРХНЯЯ ЧАСТЬ
+           ========================= */
+
+        .top {
+            height: 72px;
+            position: relative;
+        }
+
+        .login {
+            position: absolute;
+            right: 0;
+            top: 3px;
+            font-size: 11px;
+        }
+
+        .login a {
+            color: #0645ad;
+        }
+
+        .news-top {
+            position: absolute;
+            left: 175px;
+            top: 5px;
+            width: 590px;
+            font-size: 11px;
+        }
+
+        .news-top-title {
+            font-weight: bold;
+            color: #cc0000;
+            margin-bottom: 3px;
+        }
+
+        .news-top a {
+            margin-right: 12px;
+        }
+
+        .time {
+            color: #777;
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           ОСНОВНОЙ БЛОК ПОИСКА
+           ========================= */
+
+        .search-area {
+            position: relative;
+            min-height: 115px;
+        }
+
+        .logo {
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            width: 145px;
+        }
+
+        .logo-word {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 46px;
+            line-height: 42px;
+            letter-spacing: -4px;
+        }
+
+        .logo-word .ya {
+            color: #d00000;
+        }
+
+        .logo-word .ndex {
+            color: #111;
+        }
+
+        .logo-slogan {
+            font-family: "Times New Roman", serif;
+            font-size: 12px;
+            margin-left: 5px;
+            margin-top: 2px;
+        }
+
+        /*
+         * Жёлтая "стрела" Яндекса
+         */
+        .search-arrow {
+            position: absolute;
+            left: 145px;
+            top: 15px;
+            width: 620px;
+            height: 83px;
+            background: #ffd800;
+        }
+
+        .search-arrow:after {
+            content: "";
+            position: absolute;
+            right: -27px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 41px solid transparent;
+            border-bottom: 42px solid transparent;
+            border-left: 27px solid #ffd800;
+        }
+
+        .search-title {
+            font-family: "Times New Roman", serif;
+            font-weight: bold;
+            font-size: 13px;
+            padding: 5px 0 4px 15px;
+        }
+
+        .search-row {
+            padding-left: 12px;
+        }
+
+        .search-input {
+            width: 485px;
+            height: 24px;
+            border: 2px solid #999;
+            background: white;
+            font-size: 16px;
+            padding: 0 5px;
+            box-sizing: border-box;
+        }
+
+        .search-button {
+            height: 25px;
+            margin-left: 5px;
+            padding: 1px 16px;
+            border: 1px solid #888;
+            background: #eeeeee;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .search-types {
+            padding: 6px 0 0 13px;
+            font-size: 11px;
+        }
+
+        .search-types a {
+            margin-right: 15px;
+            color: #0645ad;
+        }
+
+
+        /* =========================
+           КАТЕГОРИИ
+           ========================= */
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 8px;
+        }
+
+        .category {
+            margin-bottom: 15px;
+        }
+
+        .category-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .category-title a {
+            color: #0645ad;
+        }
+
+        .category-links {
+            line-height: 17px;
+        }
+
+        .category-links a {
+            display: block;
+        }
+
+
+        /* =========================
+           НИЖНИЕ ИНФОРМАЦИОННЫЕ БЛОКИ
+           ========================= */
+
+        .info {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 1fr;
+            gap: 15px;
+            margin-top: 2px;
+            padding-top: 8px;
+            border-top: 1px solid #ddd;
+        }
+
+        .box {
+            font-size: 11px;
+        }
+
+        .box-title {
+            color: #cc0000;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .box-line {
+            line-height: 16px;
+        }
+
+        .rate {
+            display: inline-block;
+            width: 34px;
+        }
+
+        .up {
+            color: #008000;
+        }
+
+        .down {
+            color: #cc0000;
+        }
+
+
+        /* =========================
+           СЕРВИСЫ
+           ========================= */
+
+        .services {
+            border-top: 1px solid #bbb;
+            border-bottom: 1px solid #bbb;
+            margin-top: 12px;
+            padding: 7px 0;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        .services a {
+            margin: 0 7px;
+        }
+
+
+        /* =========================
+           ФУТЕР
+           ========================= */
+
+        .footer {
+            text-align: center;
+            color: #777;
+            font-size: 10px;
+            padding: 12px 0 30px;
+        }
+
+        .footer a {
+            margin: 0 7px;
+            color: #777;
+        }
+
+
+        /* =========================
+           СТАРОЕ БРАУЗЕРНОЕ ОЩУЩЕНИЕ
+           ========================= */
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            height: 1px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <!-- Верхняя часть -->
+    <div class="top">
+
+        <div class="login">
+            <a href="#">Зарегистрироваться</a>
+            &nbsp; | &nbsp;
+            <a href="#">Войти в почту</a>
+        </div>
+
+        <div class="news-top">
+            <div class="news-top-title">
+                Новости — 12:34 мск
+            </div>
+
+            <a href="#">В России опять что-то произошло</a>
+            <a href="#">Новые технологии</a>
+            <a href="#">Новости бизнеса</a>
+            <a href="#">Спорт</a>
+
+            <br>
+
+            <a href="#">Последние события дня</a>
+            <a href="#">Культура</a>
+            <a href="#">Интернет</a>
+        </div>
+
+    </div>
+
+
+    <!-- Поиск -->
+    <div class="search-area">
+
+        <div class="logo">
+            <div class="logo-word">
+                <span class="ya">Я</span><span class="ndex">ndex</span>
+            </div>
+
+            <div class="logo-slogan">
+                Найдётся всё
+            </div>
+        </div>
+
+
+        <div class="search-arrow">
+
+            <div class="search-title">
+                Я ищу:
+            </div>
+
+            <div class="search-row">
+                <input
+                        class="search-input"
+                        type="text"
+                        name="search"
+                >
+
+                <button
+                        class="search-button"
+                        onclick="return false;"
+                >
+                    Найти
+                </button>
+            </div>
+
+            <div class="search-types">
+                <a href="#">Везде</a>
+                <a href="#">Каталог</a>
+                <a href="#">Новости</a>
+                <a href="#">Маркет</a>
+                <a href="#">Картинки</a>
+                <a href="#">Справочник</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Каталог -->
+    <div class="content">
+
+        <div>
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Hi-Tech</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">компьютеры, интернет</a>
+                    <a href="#">мобильная связь</a>
+                    <a href="#">программы</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Работа</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">вакансии</a>
+                    <a href="#">трудоустройство</a>
+                    <a href="#">карьера</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Учёба</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">школа</a>
+                    <a href="#">вузы</a>
+                    <a href="#">рефераты</a>
+                    <a href="#">учебники</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Дом</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">здоровье</a>
+                    <a href="#">кухня</a>
+                    <a href="#">строительство</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Справки</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">адреса</a>
+                    <a href="#">телефоны</a>
+                    <a href="#">организации</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Развлечения</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">игры</a>
+                    <a href="#">юмор</a>
+                    <a href="#">кино</a>
+                    <a href="#">музыка</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Отдых</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">туризм</a>
+                    <a href="#">путешествия</a>
+                    <a href="#">хобби</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Культура</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">кино</a>
+                    <a href="#">литература</a>
+                    <a href="#">искусство</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Спорт</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">футбол</a>
+                    <a href="#">хоккей</a>
+                    <a href="#">автоспорт</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">СМИ</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">новости</a>
+                    <a href="#">газеты</a>
+                    <a href="#">телевидение</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Маркет</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">подбор товаров</a>
+                    <a href="#">сравнение цен</a>
+                    <a href="#">отзывы</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Бизнес</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">финансы</a>
+                    <a href="#">недвижимость</a>
+                    <a href="#">экономика</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Общество</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">власть</a>
+                    <a href="#">религия</a>
+                    <a href="#">политика</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Авто</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">автомобили</a>
+                    <a href="#">запчасти</a>
+                    <a href="#">дороги</a>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="category-title">
+                    <a href="#">Сайты Москвы</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">Москва</a>
+                    <a href="#">организации</a>
+                    <a href="#">события</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Правая колонка -->
+        <div>
+
+            <div class="category">
+
+                <div class="category-title">
+                    <a href="#">Москва</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">Погода +18°</a>
+                    <a href="#">Пробки</a>
+                    <a href="#">Афиша</a>
+                    <a href="#">Новости города</a>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-title">
+                    <a href="#">Курсы валют</a>
+                </div>
+
+                <div class="category-links">
+
+                    <div>
+                        <span class="rate">USD</span>
+                        28.35
+                        <span class="up">↑</span>
+                    </div>
+
+                    <div>
+                        <span class="rate">EUR</span>
+                        34.92
+                        <span class="down">↓</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-title">
+                    <a href="#">Телепрограмма</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">Первый канал</a>
+                    <a href="#">Россия</a>
+                    <a href="#">НТВ</a>
+                    <a href="#">ТНТ</a>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-title">
+                    <a href="#">Яндекс.Лента</a>
+                </div>
+
+                <div class="category-links">
+                    <a href="#">Последние новости</a>
+                    <a href="#">Все события</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Сервисы -->
+    <div class="services">
+
+        <a href="#">Почта</a>
+        |
+        <a href="#">Новости</a>
+        |
+        <a href="#">Лента</a>
+        |
+        <a href="#">Карты</a>
+        |
+        <a href="#">Афиша</a>
+        |
+        <a href="#">Маркет</a>
+        |
+        <a href="#">Картинки</a>
+        |
+        <a href="#">Словари</a>
+        |
+        <a href="#">Деньги</a>
+
+    </div>
+
+
+    <!-- Футер -->
+    <div class="footer">
+
+        <div>
+            <a href="#">Помощь</a>
+            <a href="#">Зарегистрироваться</a>
+            <a href="#">Настройки</a>
+            <a href="#">О Яндексе</a>
+            <a href="#">Реклама</a>
+        </div>
+
+        <br>
+
+        © 1997–2005 Яндекс
+
+    </div>
+
+</div>
+
+</body>
+</html>

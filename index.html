@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WB Банк Бизнес — Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="encoding-screen">
+    <div>
+        <img src="img/logo.png" alt="">
+    </div>
+
+    <div class="encoding-window">
+        <div class="window-content">
+            <div class="encoding-caption">
+                <span>Выберите, в какой кодировке продолжить</span>
+            </div>
+
+            <div class="encoding-buttons">
+                <button onclick="enterSite('macintosh')">
+                    <span>Macintosh</span>
+                    <img src="img/mac.png" alt="">
+                </button>
+
+                <button onclick="enterSite('koi8-r')">
+                    <span>КОИ-8</span>
+                    <img src="img/typewriter.png" alt="">
+                </button>
+
+                <button onclick="enterSite('windows-1251')">
+                    <span>Windows</span>
+                    <img src="img/win.png" alt="">
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="site" style="display: none;">
+    <div class="page">
+
+        <div class="top-warning">
+            ★★★ ДОБРО ПОЖАЛОВАТЬ НА САЙТ WB БАНК БИЗНЕС ★★★
+        </div>
+
+        <header class="header">
+            <div class="logo">
+                <span class="logo-wb">wb</span>
+                <span>банк бизнес</span>
+                <small>© 2001–2026</small>
+            </div>
+
+            <div class="welcome">
+                Добро пожаловать, уважаемый клиент!<br>
+                <span>Последний вход: сегодня, 11:15</span>
+            </div>
+
+            <div class="icq">
+                <div class="icq-title"><b>ICQ:</b></div>
+
+                <div class="icq-number">
+                    <img src="img/available.png" alt="">
+                    <span>593758</span>
+                </div>
+
+                <div class="icq-number">
+                    <img src="img/available.png" alt="">
+                    <span>148265</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="#" class="currency-link home-link">
+                ГЛАВНАЯ
+                <img src="img/nakop.jpeg" alt="Главная">
+            </a>
+            <a href="#" class="currency-link">
+                ПЛАТЕЖИ
+                <img src="img/sotka.gif" alt="Платежи">
+            </a>
+            <a href="#" class="currency-link">ДЕПОЗИТЫ
+                <img src="img/safe.jpg" alt="Депозиты">
+            </a>
+            <a href="#" class="currency-link">
+                КУРСЫ ВАЛЮТ
+                <img src="img/obmen.jpeg" alt="Курсы валют">
+            </a>
+            <a href="#" class="currency-link">ПОМОЩЬ
+                <img src="img/net.jpg" alt="Помощь">
+            </a>
+            <a href="#" class="support-link">ОБРАТНЫЙ ЗВОНОК
+                <img src="img/support.jpg" alt="Обратный звонок">
+            </a>
+        </nav>
+
+        <div class="marquee">
+            <span>🔥 НОВИНКА!!! НАКОПИТЕЛЬНЫЙ СЧЁТ ДО 12% НА ОСТАТОК!!! 🔥&nbsp;&nbsp;&nbsp; ★ СРОЧНЫЕ ПЛАТЕЖИ ОНЛАЙН ★ &nbsp;&nbsp;&nbsp; СДЕЛАЙТЕ WB БАНК БИЗНЕС СТАРТОВОЙ СТРАНИЦЕЙ!!!</span>
+        </div>
+
+        <main class="layout">
+            <aside class="left-col">
+
+                <section class="box balance">
+                    <h3>💰 ВАШ БАЛАНС</h3>
+                    <div class="balance-number">4 000 000.00 РУБ.</div>
+                    <div>Счёт: <b>·2870 «Основной»</b></div>
+                    <p><a href="#">[ ПОПОЛНИТЬ СЧЁТ ]</a></p>
+                </section>
+
+                <section class="box">
+                    <h3>МЕНЮ КЛИЕНТА</h3>
+                    <a href="#">→ Мои счета</a>
+                    <a href="#">→ Платежи</a>
+                    <a href="#">→ Выписки</a>
+                    <a href="#">→ Контрагенты</a>
+                    <a href="#">→ Депозиты</a>
+                    <a href="#">→ Реквизиты</a>
+                    <a href="#">→ Настройки</a>
+                    <a href="#">→ Безопасность</a>
+                </section>
+
+                <section class="box under">
+                    <div class="blink">🚧 UNDER<br>CONSTRUCTION 🚧</div>
+                    <p>Новый раздел<br>«Кредиты» скоро!</p>
+                </section>
+
+                <section class="box">
+                    <h3>ПОЛЕЗНЫЕ ССЫЛКИ</h3>
+                    <a href="rambler.html">Rambler</a>
+                    <a href="yandex.html">Яндекс</a>
+                    <a href="mail.html">Mail.ru</a>
+                    <a href="narod.html">Narod.ru</a>
+                    <a href="udaf.html">Udaff.com</a>
+                    <a href="https://www.anekdot.ru/">Anekdot.ru</a>
+                </section>
+
+            </aside>
+
+            <section class="center-col">
+                <section class="box operations">
+                    <h1>ОПЕРАЦИИ</h1>
+
+                    <div class="search">
+                        🔎 <input id="search" type="text" placeholder="Контрагент, сумма или назначение">
+                        <button onclick="filterOperations()">НАЙТИ</button>
+                    </div>
+
+                    <div class="filters">
+                        <select>
+                            <option>Все</option>
+                        </select>
+                        <select>
+                            <option>За всё время</option>
+                        </select>
+                        <select>
+                            <option>Все статусы</option>
+                        </select>
+                        <select>
+                            <option>Тип платежа</option>
+                        </select>
+                        <select>
+                            <option>Сумма</option>
+                        </select>
+                    </div>
+
+                    <div class="date-title">Сегодня</div>
+                    <div id="operations">
+                        <article class="operation">
+                            <div class="op-icon">%</div>
+                            <div class="op-text"><b>ООО "ВБ Банк"</b><span>Комиссия за перевод в рублях по Системе N 752<br>Согласно тарифу Банка, не облагается</span>
+                            </div>
+                            <strong class="minus">-129.00 ₽</strong>
+                        </article>
+
+                        <article class="operation">
+                            <div class="op-icon">▣</div>
+                            <div class="op-text"><b>ООО «Канцелярия»</b><span>Оплата по договору №184/98-05, в т.ч. НДС 20%</span>
+                            </div>
+                            <strong class="minus">-399.99 ₽</strong>
+                        </article>
+
+                        <article class="operation">
+                            <div class="op-icon">▣</div>
+                            <div class="op-text"><b>ЗАО
+                                «Техника»</b><span>Оплата по договору №184/98-05, в т.ч. НДС 20%</span></div>
+                            <strong class="plus">+999.99 ₽</strong>
+                        </article>
+
+                        <article class="operation">
+                            <div class="op-icon">●</div>
+                            <div class="op-text"><b>Ильин Дмитрий
+                                Анатольевич</b><span>Возврат долга. НДС не облагается</span></div>
+                            <strong class="minus">-524.12 ₽</strong>
+                        </article>
+
+                        <div class="date-title">Вчера</div>
+
+                        <article class="operation">
+                            <div class="op-icon">↗</div>
+                            <div class="op-text"><b><em>Отменяется</em> Артем Ж.</b><span>Перевод</span></div>
+                            <strong class="minus">-999.99 ₽</strong>
+                        </article>
+
+                        <article class="operation">
+                            <div class="op-icon yellow">T</div>
+                            <div class="op-text"><b>Артем Жуков</b><span>Пополнение из другого банка</span></div>
+                            <strong class="plus">+999.99 ₽</strong>
+                        </article>
+                    </div>
+
+                    <div class="guest-link">[ <a href="#">ПОДРОБНЕЕ</a> ] &nbsp; [ <a href="#">РАСПЕЧАТАТЬ</a> ]</div>
+                </section>
+
+                <section class="box guestbook">
+                    <h2>📖 ГОСТЕВАЯ КНИГА</h2>
+                    <div class="guest-entry">
+                        <b>-= Cyber_Demon =-</b><br>
+                        Классный банк!!! А где скачать клиент для Win98?<br>
+                        <small>17.09.2006 18:12</small>
+                    </div>
+                    <div class="guest-entry">
+                        <b>Vovik</b><br>
+                        Зашёл случайно. Сайт зачёт!!! Заходи ко мне тоже!<br>
+                        <small>16.09.2006 21:43</small>
+                    </div>
+                    <button onclick="guestbook()">ОСТАВИТЬ СООБЩЕНИЕ</button>
+                </section>
+            </section>
+
+            <aside class="right-col">
+                <section class="box actions">
+                    <h3>БЫСТРЫЕ ДЕЙСТВИЯ</h3>
+
+                    <a href="#" class="payment-link">
+                        ➕ Создать платёж
+                        <img src="img/ni.jpg" alt="Создать платёж">
+                    </a>
+
+                    <a href="#" class="payment-link">
+                        ▤ Заказать выписку
+                        <img src="img/hu.jpg" alt="Заказать выписку">
+                    </a>
+
+                    <a href="#" class="payment-link">
+                        ↗ Отправить реквизиты
+                        <img src="img/ya.jpg" alt="Отправить реквизиты">
+                    </a>
+                </section>
+
+                <section class="ad blinking-border">
+                    <div class="new">NEW!!!</div>
+                    <b>НАКОПИТЕЛЬНЫЙ СЧЁТ</b>
+                    <strong>ДО 12% НА ОСТАТОК!!!</strong>
+                    <span>Подключите и получайте<br>дополнительный доход</span>
+                    <button>ЖМИ СЮДА!!!</button>
+                </section>
+
+                <section class="ad hosting">
+                    <div><img src="img/emo1.gif" alt="">СУПЕР ХОСТИНГ<img src="img/emo1.gif" alt=""></div>
+                    <b>ОТ 0.99$ В МЕСЯЦ!</b>
+                    <span>PHP + MySQL<br>UNLIMITED TRAFFIC*</span>
+                    <button>ORDER NOW</button>
+                    <small class="ad-disclaimer">* пиздёж</small>
+                </section>
+
+                <section class="winamp box">
+                    <h3>♫ WINAMP 2.81</h3>
+                    <div class="track">
+                        NOW PLAYING:<br>
+                        <b id="track-title">MODERN TALKING</b><br>
+                        <span id="track-subtitle">You're My Heart, You're My Soul</span>
+                    </div>
+                    <div class="eq" id="eq">▂▅▃▇▅▂▆▃▇▂▅</div>
+                    <div class="player-buttons">
+                        <button id="play">▶</button>
+                        <button id="pause">Ⅱ</button>
+                        <button id="stop">■</button>
+                        <audio id="music" src="music/leningrad.mp3"></audio>
+
+                        <button id="prev">◀◀</button>
+                        <button id="next">▶▶</button>
+                    </div>
+                    <small>Если музыка не играет —<br><a href="#">скачайте Winamp</a></small>
+                </section>
+
+                <section class="box counters">
+                    <h3>НАШИ СЧЁТЧИКИ</h3>
+                    <div class="counter">00133742</div>
+                    <div>Сегодня: <b>42</b></div>
+                    <div>Вчера: <b>17</b></div>
+                    <div>Всего: <b>133742</b></div>
+                    <div class="old-counters">
+                        <img src="img/top100.gif" alt="Rambler">
+                        <img src="img/mailru.gif" alt="Mail.ru">
+                        <img src="img/yandex2.gif" alt="Яндекс">
+                    </div>
+                </section>
+
+            </aside>
+        </main>
+
+        <footer>
+            <div class="footer-gif">★ ★ ★ BEST VIEWED IN 800×600 ★ ★ ★</div>
+            <p>
+                <a href="#">[ E-MAIL WEBMASTER ]</a> |
+                <a href="#">[ ГОСТЕВАЯ КНИГА ]</a> |
+                <a href="#">[ ДОБАВИТЬ В ИЗБРАННОЕ ]</a>
+            </p>
+            <p>Сайт оптимизирован для Internet Explorer 5.5 и Netscape Navigator</p>
+            <p>© 2001–2026 ООО «АРГ». Все права защищены. Копирование материалов без согласия автора запрещено!!!</p>
+            <div class="tiny">Ваш IP: 127.0.0.1 &nbsp; | &nbsp; JavaScript: ON &nbsp; | &nbsp; Cookies: ENABLED</div>
+            <a href="https://www.artlebedev.ru/" target="_blank">
+                <img src="img/art-lebedev.png"
+                     width="88"
+                     height="95"
+                     alt="Студия Артемия Лебедева">
+            </a>
+        </footer>
+
+    </div>
+
+    <div id="popup" class="popup">
+        <b>WELCOME!!!</b>
+        <p>Добро пожаловать на наш сайт!</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

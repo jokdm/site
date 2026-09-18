@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Rambler — 9 февраля 2005</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #333;
+            font: 11px Arial, Helvetica, sans-serif
+        }
+
+        a {
+            color: #164d83;
+            text-decoration: underline
+        }
+
+        a:hover {
+            color: #c00
+        }
+
+        .page {
+            width: 760px;
+            margin: 0 auto
+        }
+
+        .top {
+            height: 18px;
+            border-bottom: 1px solid #ddd;
+            color: #777;
+            font-size: 10px
+        }
+
+        .top a {
+            color: #777;
+            margin-right: 12px
+        }
+
+        .head {
+            height: 73px;
+            display: grid;
+            grid-template-columns:150px 1fr
+        }
+
+        .logo {
+            font: bold 38px Arial;
+            color: #2872b4;
+            letter-spacing: -3px;
+            padding-top: 17px
+        }
+
+        .logo small {
+            display: block;
+            font: 10px Arial;
+            color: #777;
+            letter-spacing: 0;
+            margin: 0 0 0 43px
+        }
+
+        .search {
+            padding-top: 7px
+        }
+
+        .searchrow {
+            display: flex;
+            align-items: center;
+            gap: 5px
+        }
+
+        .searchrow b {
+            font-size: 12px
+        }
+
+        .searchrow input {
+            width: 355px;
+            height: 21px;
+            border: 1px solid #aaa
+        }
+
+        .button {
+            height: 23px;
+            border: 1px solid #888;
+            background: linear-gradient(#fff, #ddd);
+            font-size: 11px;
+            padding: 0 10px
+        }
+
+        .radios {
+            margin-top: 3px;
+            color: #555
+        }
+
+        .radios label {
+            margin-right: 12px
+        }
+
+        .radios input {
+            vertical-align: middle
+        }
+
+        .help {
+            float: right;
+            margin-top: -29px
+        }
+
+        .nav {
+            height: 24px;
+            line-height: 24px;
+            background: #2879bb;
+            border-top: 1px solid #145c98;
+            border-bottom: 1px solid #124f84
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0 10px;
+            border-right: 1px solid #67a9d0
+        }
+
+        .nav a:first-child {
+            background: #1b609f
+        }
+
+        .under {
+            height: 18px;
+            line-height: 18px;
+            background: #e8f5fb;
+            border-bottom: 1px solid #b9dbe8;
+            padding-left: 8px
+        }
+
+        .under a {
+            margin-right: 10px
+        }
+
+        .banner {
+            height: 105px;
+            margin-top: 7px;
+            overflow: hidden;
+            border: 1px solid #b9cbd4
+        }
+
+        .historical-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 28%;
+            display: block
+        }
+
+        .cols {
+            display: grid;
+            grid-template-columns:151px 399px 190px;
+            gap: 10px;
+            margin-top: 8px
+        }
+
+        .bar {
+            height: 20px;
+            line-height: 20px;
+            padding-left: 7px;
+            color: #fff;
+            background: #3377ba;
+            font-weight: bold;
+            border-radius: 0 11px 0 0
+        }
+
+        .box {
+            border: 1px solid #c8dce8;
+            border-top: 0;
+            padding: 6px;
+            background: #fff;
+            margin-bottom: 9px
+        }
+
+        .green {
+            background: #dceeb4;
+            color: #56770d;
+            padding: 4px;
+            font-weight: bold
+        }
+
+        .yellow {
+            background: #eeeabc;
+            color: #787100;
+            padding: 4px;
+            font-weight: bold
+        }
+
+        .login input {
+            width: 130px;
+            height: 17px;
+            border: 1px solid #aaa;
+            margin: 2px 0 4px
+        }
+
+        .login .button {
+            height: 21px;
+            padding: 0 8px
+        }
+
+        .login a {
+            font-size: 10px
+        }
+
+        .center-title {
+            font: bold 14px Georgia, serif;
+            border-bottom: 2px solid #ddd;
+            padding: 3px 0 4px
+        }
+
+        .story {
+            display: grid;
+            grid-template-columns:91px 1fr;
+            gap: 8px;
+            margin: 7px 0
+        }
+
+        .pic {
+            height: 66px;
+            border: 1px solid #777
+        }
+
+        .realphoto {
+            width: 91px;
+            height: 66px;
+            object-fit: cover;
+            border: 1px solid #777;
+            display: block
+        }
+
+        .news {
+            margin: 0;
+            padding-left: 16px
+        }
+
+        .news li {
+            margin: 4px 0
+        }
+
+        .news a {
+            color: #333
+        }
+
+        .more {
+            text-align: right;
+            margin: 4px 0
+        }
+
+        .service {
+            line-height: 17px
+        }
+
+        .service a {
+            margin-right: 8px
+        }
+
+        .top100 {
+            border: 1px solid #c8dce8;
+            margin-top: 8px
+        }
+
+        .top100 .title {
+            height: 20px;
+            line-height: 20px;
+            background: #3b78bd;
+            color: #fff;
+            font-weight: bold;
+            padding-left: 7px
+        }
+
+        .topgrid {
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap: 0 20px;
+            padding: 6px
+        }
+
+        .topgrid a {
+            display: block;
+            line-height: 16px
+        }
+
+        .today .bar {
+            background: #79a91d
+        }
+
+        .today .box {
+            background: #f8fbe9
+        }
+
+        .small {
+            line-height: 17px
+        }
+
+        .weather b {
+            font-size: 13px
+        }
+
+        .footer {
+            border-top: 1px solid #ccc;
+            margin-top: 8px;
+            padding: 8px 0 20px;
+            text-align: center;
+            color: #888;
+            font-size: 10px
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="top"><a href="#">Сделать стартовой</a><a href="#">легкий</a><a href="#">классический</a><span
+            style="float:right"><a href="#">Помощь</a> | <a href="#">Реклама</a></span></div>
+    <div class="head">
+        <div class="logo"><img src="https://www.ph4.ru/DL/LOGO/_old/rambler.gif" alt="Rambler"
+                               style="width:128px;height:auto;margin-top:10px"></div>
+        <div class="search">
+            <div class="searchrow"><b>ИСКАТЬ</b><input>
+                <button class="button">Найти!</button>
+            </div>
+            <div class="radios"><label><input type="radio" checked> в Интернете</label><label><input type="radio"> в
+                новостях</label><label><input type="radio"> в товарах</label><label><input type="radio"> в
+                Top100</label><a href="#">Расширенный поиск</a></div>
+            <a class="help" href="#">Помощь</a></div>
+    </div>
+    <div class="nav"><a href="#">Top100</a><a href="#">Магазины</a><a href="#">Валентин</a><a href="#">Путешествия</a><a
+            href="#">Авто</a><a href="#">Здоровье</a><a href="#">Компьютеры</a><a href="#">Игры</a></div>
+    <div class="under"><a href="#">Почта</a><a href="#">Новости</a><a href="#">Кино</a><a href="#">Спорт</a><a href="#">Погода</a><a
+            href="#">Финансы</a><a href="#">Работа</a></div>
+    <div class="banner historical-banner"><img
+            src="https://cs15.pikabu.ru/post_img/big/2024/10/19/7/1729338967150522989.jpg"
+            alt="Rambler.ru — главная страница, 9 февраля 2005 года"></div>
+    <div class="cols">
+        <div>
+            <div class="bar">Почта</div>
+            <div class="box login">
+                <div style="text-align:right"><a href="#">получить адрес</a></div>
+                Логин<br><input><br>Пароль<br><input type="password"><br>
+                <button class="button">Войти</button>
+                <a href="#">Забыли пароль?</a>
+                <div style="text-align:center;margin-top:4px"><a href="#">Получить адрес</a></div>
+            </div>
+            <div class="green">СЕРВИСЫ</div>
+            <div class="box service"><a href="#">Почта</a><a href="#">Группы</a><a href="#">Фото</a><a
+                    href="#">Партнер</a><a href="#">Поиск файлов</a><a href="#">Словарь</a><a href="#">Карты</a><a
+                    href="#">Открытки</a><a href="#">Знакомства</a></div>
+            <div class="yellow">ВАЛЮТА</div>
+            <div class="box small"><a href="#">Курс валют</a><br><a href="#">Котировки</a><br><a href="#">Финансы</a>
+            </div>
+        </div>
+        <div>
+            <div class="center-title">Новости</div>
+            <div class="story"><img class="realphoto"
+                                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Moscow2005%201.jpg"
+                                    alt="Москва, 2005">
+                <div><b><a href="#">Главные новости дня</a></b><br>Самые важные события России и мира. Свежая информация
+                    информационных агентств.
+                </div>
+            </div>
+            <ul class="news">
+                <li><a href="#">Думское «жюри» готовится к жёстким дебатам</a></li>
+                <li><a href="#">Павел Буре встретится с «Арбат»</a></li>
+                <li><a href="#">Задержанного в «Ш-2» семью отпустили</a></li>
+                <li><a href="#">Лужков сделает Садовое кольцо</a></li>
+                <li><a href="#">«ЮКОСа» отпустили семью</a></li>
+                <li><a href="#">Европейский суд признал «банковские» фамилии</a></li>
+                <li><a href="#">Путин выступил с обращением</a></li>
+                <li><a href="#">Яркие события нового года</a></li>
+            </ul>
+            <div class="more"><a href="#">Все новости &gt;&gt;</a></div>
+            <div class="green">СЕРВИСЫ: <a href="#">Почта</a> · <a href="#">Группы</a> · <a href="#">Фото</a> · <a
+                    href="#">Партнер</a> · <a href="#">Поиск файлов</a> · <a href="#">Словарь</a> · <a
+                    href="#">Карты</a> · <a href="#">Открытки</a> · <a href="#">Знакомства</a></div>
+            <div class="top100">
+                <div class="title">Top100 <span
+                        style="float:right;font-size:10px;margin-right:8px">Лидеры рейтинга</span></div>
+                <div class="topgrid">
+                    <div><a href="#">Авто</a><a href="#">Администрация</a><a href="#">Аналитика</a><a href="#">Безопасность</a><a
+                            href="#">Бизнес и финансы</a><a href="#">Города и регионы</a><a href="#">Дизайн</a><a
+                            href="#">Женское</a><a href="#">Знакомства</a></div>
+                    <div><a href="#">Медицина</a><a href="#">MP3</a><a href="#">Музыка</a><a href="#">Наука</a><a
+                            href="#">Недвижимость</a><a href="#">Образование</a><a href="#">Отдых</a><a
+                            href="#">Погода</a><a href="#">Природа</a><a href="#">Программы</a></div>
+                    <div><a href="#">СМИ и периодика</a><a href="#">Связь</a><a href="#">Сервисы</a><a
+                            href="#">Спорт</a><a href="#">Строительство</a><a href="#">Техника</a><a
+                            href="#">Технологии</a><a href="#">Товары и услуги</a><a href="#">Транспорт</a><a href="#">Фотография</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="today">
+                <div class="bar">Сегодня</div>
+                <div class="box small"><b>9 февраля 2005</b><br><br><a href="#">Новости</a><br><a href="#">Спорт</a><br><a
+                        href="#">Гороскоп</a><br><a href="#">Погода</a><br><a href="#">Телепрограмма</a><br><a href="#">Курс
+                    валют</a></div>
+            </div>
+            <div class="bar">Новости</div>
+            <div class="box small"><a href="#">Россия</a><br><a href="#">Москва</a><br><a href="#">Мир</a><br><a
+                    href="#">Политика</a><br><a href="#">Культура</a><br><a href="#">Спорт</a></div>
+            <div class="bar">Погода</div>
+            <div class="box weather">Москва<br><b>−3° C</b><br>облачно<br>ветер 4 м/с</div>
+            <div class="bar">Курс валют</div>
+            <div class="box">USD&nbsp; 27,72<br>EUR&nbsp; 35,95</div>
+        </div>
+    </div>
+    <div class="footer"><a href="#">О Рамблере</a> · <a href="#">Новости компании</a> · <a href="#">Реклама</a> · <a
+            href="#">Помощь</a><br><br>© 1996–2005 Rambler
+    </div>
+</div>
+</body>
+</html>

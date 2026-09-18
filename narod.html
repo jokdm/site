@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Яндекс.Народ</title>
+
+    <style>
+        /*
+         * ЯНДЕКС.НАРОД — реконструкция главной страницы ~2005
+         *
+         * Реальные архивные ассеты:
+         * http://narod.yandex.ru/images/index_templ/6/
+         * http://narod.yandex.ru/images/index_templ/4/
+         *
+         * Страница намеренно сделана под старый браузер:
+         * таблицы, пиксельные размеры, Arial/Times, старые формы.
+         */
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #5954c8;
+            color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        a {
+            color: #000099;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #551a8b;
+        }
+
+        a:hover {
+            color: #cc0000;
+        }
+
+
+        /* =========================================================
+           СТРАНИЦА
+           ========================================================= */
+
+        .page {
+            width: 760px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+
+        /* =========================================================
+           ВЕРХ
+           ========================================================= */
+
+        .header {
+            height: 76px;
+            background: #5048b8;
+            position: relative;
+        }
+
+        .header-logo {
+            position: absolute;
+            left: 18px;
+            top: 9px;
+        }
+
+        /*
+         * Реальный логотип Narod.
+         *
+         * Этот файл реально использовался в шаблонах старого Narod.
+         */
+        .header-logo img {
+            width: 122px;
+            height: 70px;
+            border: 0;
+        }
+
+
+        /* Яндекс */
+
+        .yandex {
+            position: absolute;
+            left: 160px;
+            top: 12px;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .yandex span {
+            color: #ff0000;
+        }
+
+        .header-title {
+            position: absolute;
+            left: 160px;
+            top: 43px;
+            color: #fff;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+        }
+
+        .header-right {
+            position: absolute;
+            right: 14px;
+            top: 12px;
+            color: #fff;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 12px;
+            text-align: right;
+        }
+
+
+        /* =========================================================
+           ГЛАВНОЕ МЕНЮ
+           ========================================================= */
+
+        .top-menu {
+            height: 25px;
+            background: #ffcc00;
+            border-top: 1px solid #fff36a;
+            border-bottom: 1px solid #8e7100;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .top-menu a {
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+
+            padding: 0 13px;
+
+            color: #000;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: underline;
+
+            border-right: 1px solid #b58e00;
+        }
+
+        .top-menu a:hover {
+            background: #ffe477;
+        }
+
+
+        /* =========================================================
+           ОСНОВНОЙ КОНТЕНТ
+           ========================================================= */
+
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .left-column {
+            width: 175px;
+            vertical-align: top;
+            padding: 8px 6px 8px 8px;
+        }
+
+        .center-column {
+            width: 405px;
+            vertical-align: top;
+            padding: 8px 5px;
+        }
+
+        .right-column {
+            width: 175px;
+            vertical-align: top;
+            padding: 8px 8px 8px 6px;
+        }
+
+
+        /* =========================================================
+           СТАРЫЕ БЛОКИ
+           ========================================================= */
+
+        .block {
+            margin-bottom: 9px;
+        }
+
+        .block-title {
+            height: 23px;
+            line-height: 23px;
+
+            padding-left: 9px;
+
+            color: #fff;
+            background: #5048b8;
+
+            font-family: "Times New Roman", Times, serif;
+            font-size: 13px;
+            font-weight: bold;
+
+            border-radius: 12px 12px 0 0;
+        }
+
+        .block-body {
+            background: #aaaaf0;
+            border: 1px solid #5048b8;
+            border-top: 0;
+
+            padding: 7px 8px;
+        }
+
+
+        /* =========================================================
+           ЛЕВАЯ КОЛОНКА
+           ========================================================= */
+
+        .news-date {
+            color: #555;
+            font-size: 10px;
+        }
+
+        .news-item {
+            margin-bottom: 9px;
+            line-height: 14px;
+        }
+
+        .rating {
+            font-family: "Times New Roman", serif;
+            font-size: 12px;
+        }
+
+        .rating-number {
+            color: #cc0000;
+            font-weight: bold;
+        }
+
+        .catalog {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .catalog li {
+            margin-bottom: 3px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .catalog li:before {
+            content: "•";
+            position: absolute;
+            left: 1px;
+            color: #5048b8;
+            font-weight: bold;
+        }
+
+
+        /* =========================================================
+           ПОИСК
+           ========================================================= */
+
+        .search-input {
+            width: 125px;
+            height: 17px;
+            padding: 0 3px;
+
+            border: 1px solid #777;
+            background: #fff;
+
+            font-family: Arial;
+            font-size: 11px;
+        }
+
+        .search-button {
+            margin-top: 5px;
+
+            height: 21px;
+
+            padding: 0 13px;
+
+            background: #ffcc00;
+
+            border: 1px solid #8c6d00;
+
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+
+        /* =========================================================
+           ЦЕНТРАЛЬНЫЙ БЛОК
+           ========================================================= */
+
+        .hero {
+            background: #8b8be7;
+
+            border: 4px solid #5048b8;
+
+            padding: 12px 13px 14px;
+
+            /*
+             * Очень старый стиль:
+             * никаких современных теней/flex/grid.
+             */
+        }
+
+        .hero-title {
+            color: #fff;
+
+            font-family: "Times New Roman", Times, serif;
+            font-size: 19px;
+            font-weight: bold;
+            font-style: italic;
+
+            text-align: center;
+
+            margin-bottom: 11px;
+        }
+
+        .hero-subtitle {
+            color: #222;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .create-line {
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .site-input {
+            width: 145px;
+            height: 20px;
+
+            border: 1px solid #777;
+
+            font-size: 12px;
+        }
+
+        .narod-domain {
+            font-weight: bold;
+            color: #282480;
+        }
+
+        .create-button {
+            height: 23px;
+
+            padding: 0 16px;
+
+            background: #ffcc00;
+
+            border: 1px solid #8d6c00;
+
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .hero-text {
+            margin-top: 13px;
+
+            padding: 8px 4px;
+
+            border-top: 1px dotted #fff;
+            border-bottom: 1px dotted #fff;
+
+            line-height: 15px;
+        }
+
+        .hero-links {
+            padding-top: 9px;
+        }
+
+        .hero-row {
+            min-height: 55px;
+            margin-bottom: 6px;
+
+            position: relative;
+            padding-left: 55px;
+        }
+
+        .hero-row img {
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 45px;
+            height: 45px;
+
+            object-fit: contain;
+        }
+
+        .hero-row-title {
+            color: #fff;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .hero-row-text {
+            margin-top: 2px;
+            line-height: 14px;
+        }
+
+        .hero-row-text a {
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           РЕАЛЬНЫЙ СТАРЫЙ БЛОК "НАРОДНАЯ"
+           ========================================================= */
+
+        .narod-real {
+            text-align: center;
+            margin-top: 8px;
+            padding-top: 4px;
+        }
+
+        .narod-real img {
+            width: 113px;
+            height: 66px;
+            border: 0;
+        }
+
+
+        /* =========================================================
+           ПРАВАЯ КОЛОНКА
+           ========================================================= */
+
+        .login {
+            text-align: center;
+        }
+
+        .login-line {
+            margin-bottom: 6px;
+            white-space: nowrap;
+        }
+
+        .login-label {
+            display: inline-block;
+            width: 43px;
+            text-align: right;
+            margin-right: 4px;
+        }
+
+        .login-input {
+            width: 95px;
+            height: 17px;
+
+            border: 1px solid #777;
+        }
+
+        .login-button {
+            margin-top: 3px;
+
+            background: #ffcc00;
+            border: 1px solid #8d6c00;
+
+            height: 21px;
+
+            padding: 0 13px;
+
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .login-links {
+            margin-top: 8px;
+            line-height: 16px;
+        }
+
+
+        /* =========================================================
+           РЕКЛАМА
+           ========================================================= */
+
+        .fake-ad {
+            background: #fff;
+
+            border: 1px solid #888;
+
+            padding: 7px;
+
+            text-align: center;
+
+            font-family: "Times New Roman", serif;
+        }
+
+        .fake-ad-yandex {
+            font-family: Arial, sans-serif;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .fake-ad-yandex:first-letter {
+            color: #d00000;
+        }
+
+        .fake-ad-text {
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+
+        /* =========================================================
+           СТАТИСТИКА
+           ========================================================= */
+
+        .stat {
+            text-align: center;
+            line-height: 15px;
+        }
+
+        .counter {
+            margin-top: 7px;
+
+            display: inline-block;
+
+            padding: 2px 5px;
+
+            background: #000;
+
+            color: #00ff00;
+
+            font-family: "Courier New", monospace;
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           НИЗ
+           ========================================================= */
+
+        .bottom-menu {
+            background: #ffcc00;
+
+            border-top: 1px solid #8e7100;
+            border-bottom: 1px solid #8e7100;
+
+            height: 25px;
+
+            text-align: center;
+        }
+
+        .bottom-menu a {
+            line-height: 25px;
+
+            margin: 0 12px;
+
+            color: #000;
+
+            font-family: "Times New Roman", serif;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+
+        .footer {
+            background: #5048b8;
+
+            color: #fff;
+
+            min-height: 45px;
+
+            padding: 8px 12px;
+
+            font-size: 10px;
+
+            box-sizing: border-box;
+        }
+
+        .footer a {
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           СТАРЫЕ ДЕКОРАТИВНЫЕ ШТУКИ
+           ========================================================= */
+
+        .separator {
+            height: 1px;
+            border-top: 1px dotted #fff;
+            margin: 7px 0;
+        }
+
+        .small {
+            font-size: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <div class="header">
+
+        <a href="#">
+            <div class="header-logo">
+                <img
+                        src="http://narod.yandex.ru/images/index_templ/4/narod.gif"
+                        alt="Народ"
+                >
+            </div>
+        </a>
+
+        <div class="yandex">
+            <span>Я</span>ndex
+        </div>
+
+        <div class="header-title">
+            Народ
+        </div>
+
+        <div class="header-right">
+            Бесплатный хостинг<br>
+            для всех
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOP NAVIGATION
+         ===================================================== -->
+
+    <div class="top-menu">
+
+        <a href="#">Регистрация</a>
+        <a href="#">Мастерская</a>
+        <a href="#">Почта</a>
+        <a href="#">Поиск</a>
+        <a href="#">Каталог</a>
+        <a href="#">Чаты</a>
+        <a href="#">Газета</a>
+        <a href="#">Письмо</a>
+        <a href="#">Помощь</a>
+
+    </div>
+
+
+    <!-- =====================================================
+         CONTENT
+         ===================================================== -->
+
+    <table class="main-table">
+
+        <tr>
+
+
+            <!-- =================================================
+                 LEFT
+                 ================================================= -->
+
+            <td class="left-column">
+
+
+                <!-- НАРОДНЫЙ РЕЙТИНГ -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Народный рейтинг
+                    </div>
+
+                    <div class="block-body rating">
+
+                        <div class="news-item">
+
+                            <b>Лучшие сайты</b>
+
+                            <br>
+
+                            <span class="rating-number">1.</span>
+                            <a href="#">Сайт недели</a>
+
+                            <br>
+
+                            <span class="rating-number">2.</span>
+                            <a href="#">Мир компьютеров</a>
+
+                            <br>
+
+                            <span class="rating-number">3.</span>
+                            <a href="#">Домашняя страница</a>
+
+                        </div>
+
+                        <a href="#">
+                            Весь рейтинг →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- НОВОСТИ -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Новости
+                    </div>
+
+                    <div class="block-body">
+
+                        <div class="news-item">
+
+                            <span class="news-date">
+                                27.12.2005
+                            </span>
+
+                            <br>
+
+                            <a href="#">
+                                Новые возможности Народ.Ру
+                            </a>
+
+                        </div>
+
+                        <div class="news-item">
+
+                            <span class="news-date">
+                                20.12.2005
+                            </span>
+
+                            <br>
+
+                            <a href="#">
+                                Народный рейтинг
+                            </a>
+
+                        </div>
+
+                        <div class="news-item">
+
+                            <span class="news-date">
+                                12.12.2005
+                            </span>
+
+                            <br>
+
+                            <a href="#">
+                                Обновление сервиса
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- КАТАЛОГ -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Каталог
+                    </div>
+
+                    <div class="block-body">
+
+                        <ul class="catalog">
+
+                            <li><a href="#">Авто</a></li>
+                            <li><a href="#">Бизнес</a></li>
+                            <li><a href="#">Дом и семья</a></li>
+                            <li><a href="#">Здоровье</a></li>
+                            <li><a href="#">Знакомства</a></li>
+                            <li><a href="#">Компьютеры</a></li>
+                            <li><a href="#">Культура</a></li>
+                            <li><a href="#">Музыка</a></li>
+                            <li><a href="#">Наука</a></li>
+                            <li><a href="#">Образование</a></li>
+                            <li><a href="#">Путешествия</a></li>
+                            <li><a href="#">Работа</a></li>
+                            <li><a href="#">Спорт</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ПОИСК -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Поиск
+                    </div>
+
+                    <div class="block-body">
+
+                        <input
+                                class="search-input"
+                                type="text"
+                        >
+
+                        <br>
+
+                        <label>
+                            <input type="radio" name="search">
+                            на Народе
+                        </label>
+
+                        <br>
+
+                        <label>
+                            <input type="radio" name="search">
+                            на Яндексе
+                        </label>
+
+                        <br>
+
+                        <button class="search-button">
+                            найти
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </td>
+
+
+            <!-- =================================================
+                 CENTER
+                 ================================================= -->
+
+            <td class="center-column">
+
+
+                <div class="hero">
+
+
+                    <div class="hero-title">
+                        Постройте свой сайт за 60 секунд!
+                    </div>
+
+
+                    <div class="hero-subtitle">
+                        Займите имя для своего сайта
+                    </div>
+
+
+                    <div class="create-line">
+
+                        <input
+                                class="site-input"
+                                type="text"
+                                value="dom-remont"
+                        >
+
+                        <span class="narod-domain">
+                            .narod.ru
+                        </span>
+
+                        <button class="create-button">
+                            создать
+                        </button>
+
+                    </div>
+
+
+                    <div class="hero-text">
+
+                        И получите в придачу неограниченное
+                        пространство, готовые варианты дизайна,
+                        счетчики, статистику посещений,
+                        гостевую книгу и форум.
+
+                    </div>
+
+
+                    <!-- =========================================
+                         РЕАЛЬНЫЕ / АРХИВНЫЕ ИЗОБРАЖЕНИЯ
+                         ========================================= -->
+
+
+                    <div class="hero-links">
+
+
+                        <div class="hero-row">
+
+                            <!-- Архивный декоративный ассет Narod -->
+
+                            <img
+                                    src="http://narod.yandex.ru/images/index_templ/6/fingertip.gif"
+                                    alt=""
+                            >
+
+                            <div class="hero-row-title">
+                                Первый раз с Народом?
+                            </div>
+
+                            <div class="hero-row-text">
+
+                                <a href="#">Что здесь дают</a>,
+                                <a href="#">как создать сайт</a>,
+                                <a href="#">пробный тур</a>,
+                                <a href="#">помощь</a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hero-row">
+
+                            <!-- Архивная картинка старого шаблона -->
+
+                            <img
+                                    src="http://narod.yandex.ru/images/index_templ/6/pic.gif"
+                                    alt=""
+                            >
+
+                            <div class="hero-row-title">
+                                Познакомься с Народом
+                            </div>
+
+                            <div class="hero-row-text">
+
+                                <a href="#">Каталог</a>,
+                                <a href="#">чаты</a>,
+                                <a href="#">форумы</a>,
+                                <a href="#">лучшие сайты</a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hero-row">
+
+                            <div class="hero-row-title">
+                                Всё для вашего сайта
+                            </div>
+
+                            <div class="hero-row-text">
+
+                                <a href="#">Гостевая книга</a>,
+                                <a href="#">счетчики</a>,
+                                <a href="#">статистика</a>,
+                                <a href="#">помощь</a>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- РЕАЛЬНЫЙ ЛОГОТИП NAROD -->
+
+                    <div class="narod-real">
+
+                        <a href="#">
+
+                            <img
+                                    src="http://narod.yandex.ru/images/index_templ/6/narod.gif"
+                                    alt="Народ"
+                            >
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- НИЖНИЙ ЦЕНТРАЛЬНЫЙ БЛОК -->
+
+                <div
+                        style="
+                        margin-top:8px;
+                        padding:7px;
+                        background:#eeeeff;
+                        border:1px solid #777;
+                        font-size:11px;
+                    "
+                >
+
+                    <b>Народная почта</b>
+
+                    &nbsp;
+
+                    <a href="#">Войти</a>
+                    |
+                    <a href="#">Зарегистрироваться</a>
+
+                    <br>
+
+                    Получите бесплатный почтовый ящик
+                    на Яндексе.
+
+                </div>
+
+
+            </td>
+
+
+            <!-- =================================================
+                 RIGHT
+                 ================================================= -->
+
+            <td class="right-column">
+
+
+                <!-- ВХОД -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Вход
+                    </div>
+
+                    <div class="block-body login">
+
+
+                        <div class="login-line">
+
+                            <span class="login-label">
+                                Логин:
+                            </span>
+
+                            <input
+                                    class="login-input"
+                                    type="text"
+                            >
+
+                        </div>
+
+
+                        <div class="login-line">
+
+                            <span class="login-label">
+                                Пароль:
+                            </span>
+
+                            <input
+                                    class="login-input"
+                                    type="password"
+                            >
+
+                        </div>
+
+
+                        <button class="login-button">
+                            войти
+                        </button>
+
+
+                        <div class="login-links">
+
+                            <a href="#">
+                                Забыли пароль?
+                            </a>
+
+                            <br>
+
+                            <a href="#">
+                                Регистрация
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- СЛУЧАЙНАЯ ВЫБОРКА -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Случайная выборка
+                    </div>
+
+                    <div class="block-body">
+
+                        <a href="#">
+                            Новые сайты
+                        </a>
+
+                        <br><br>
+
+                        <a href="#">
+                            Лучшие сайты
+                        </a>
+
+                        <br><br>
+
+                        <a href="#">
+                            Домашние страницы
+                        </a>
+
+                        <br><br>
+
+                        <a href="#">
+                            Сайты пользователей
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- РЕКЛАМА -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Реклама
+                    </div>
+
+                    <div class="block-body">
+
+                        <div class="fake-ad">
+
+                            <div class="fake-ad-yandex">
+                                <span style="color:#d00000">Я</span>ndex
+                            </div>
+
+                            <div class="fake-ad-text">
+                                Всё необходимое<br>
+                                в Интернете
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- СТАТИСТИКА -->
+
+                <div class="block">
+
+                    <div class="block-title">
+                        Статистика
+                    </div>
+
+                    <div class="block-body stat">
+
+                        Сайтов на Народе:
+
+                        <br>
+
+                        <b>
+                            1 234 567
+                        </b>
+
+                        <br><br>
+
+                        Создано сегодня:
+
+                        <br>
+
+                        <b>
+                            12 345
+                        </b>
+
+                        <br>
+
+                        <span class="counter">
+                            0000123456
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         BOTTOM NAV
+         ===================================================== -->
+
+    <div class="bottom-menu">
+
+        <a href="#">Регистрация</a>
+        <a href="#">Мастерская</a>
+        <a href="#">Почта</a>
+        <a href="#">Каталог</a>
+        <a href="#">Помощь</a>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <div class="footer">
+
+        <div style="float:left">
+
+            © 2000–2005 «Яндекс»
+
+            <br>
+
+            <a href="#">
+                Пользовательское соглашение
+            </a>
+
+        </div>
+
+
+        <div style="float:right; text-align:right">
+
+            <a href="#">
+                Обратная связь
+            </a>
+
+            <br>
+
+            <a href="#">
+                Помощь
+            </a>
+
+        </div>
+
+
+        <div style="clear:both"></div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

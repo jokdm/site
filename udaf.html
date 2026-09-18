@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Ресурс Удава :: Главная</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #d6d6d6;
+            color: #222;
+            font-family: Arial, Tahoma, sans-serif;
+            font-size: 11px;
+        }
+
+        a {
+            color: #900;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #000;
+        }
+
+        #page {
+            width: 880px;
+            margin: 7px auto;
+            background: #fff;
+            border: 1px solid #777;
+        }
+
+        #head {
+            height: 62px;
+            background: #cfcfcf;
+            border-bottom: 1px solid #888;
+            position: relative;
+        }
+
+        #head .bar {
+            height: 7px;
+            background: #666;
+        }
+
+        #head .title {
+            position: absolute;
+            left: 16px;
+            top: 17px;
+            font: bold 25px Arial;
+            color: #111;
+            letter-spacing: -2px;
+        }
+
+        #head .title span {
+            color: #8d0000;
+        }
+
+        #head .tag {
+            position: absolute;
+            left: 19px;
+            top: 45px;
+            font: 10px Tahoma;
+            color: #555;
+        }
+
+        #head .right {
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            text-align: right;
+            color: #666;
+            font-size: 10px;
+        }
+
+        #body {
+            padding: 7px;
+        }
+
+        table.layout {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        td.left {
+            width: 232px;
+            vertical-align: top;
+            padding-right: 7px;
+        }
+
+        td.center {
+            width: auto;
+            vertical-align: top;
+            padding-right: 7px;
+        }
+
+        td.right {
+            width: 145px;
+            vertical-align: top;
+        }
+
+        .box {
+            border: 1px solid #aaa;
+            background: #f5f5f5;
+            margin-bottom: 7px;
+        }
+
+        .box .cap {
+            background: #bcbcbc;
+            border-bottom: 1px solid #999;
+            padding: 3px 5px;
+            font-weight: bold;
+            font-size: 10px;
+            color: #222;
+        }
+
+        .box .in {
+            padding: 5px;
+        }
+
+        .logo {
+            display: block;
+            width: 126px;
+            margin: 0 auto 3px;
+        }
+
+        .hand {
+            font-size: 33px;
+            line-height: 30px;
+            text-align: center;
+            color: #111;
+            margin: 0 0 4px;
+        }
+
+        .mission {
+            font-size: 10px;
+            line-height: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .menu a {
+            display: block;
+            padding: 2px 3px;
+            border-bottom: 1px dotted #aaa;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background: #ddd;
+        }
+
+        .tiny {
+            font-size: 9px;
+            line-height: 12px;
+        }
+
+        ul.links {
+            margin: 0;
+            padding-left: 14px;
+        }
+
+        ul.links li {
+            margin: 2px 0;
+        }
+
+        #main-title {
+            font: bold 17px Arial;
+            color: #111;
+            border-bottom: 2px solid #900;
+            padding: 2px 0 3px;
+            margin: 0 0 5px;
+        }
+
+        .meta {
+            font-size: 9px;
+            color: #777;
+            margin-bottom: 6px;
+        }
+
+        .creo {
+            border: 1px solid #aaa;
+            background: #eee;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .creo img {
+            display: block;
+            margin: 0 auto;
+            max-width: 420px;
+            width: auto;
+            height: auto;
+            border: 1px solid #555;
+            background: #fff;
+        }
+
+        .caption {
+            font-size: 10px;
+            text-align: left;
+            margin: 5px 2px 0;
+            color: #333;
+        }
+
+        .pager {
+            text-align: center;
+            margin: 6px 0;
+            font-weight: bold;
+        }
+
+        .pager a {
+            padding: 0 9px;
+        }
+
+        .section {
+            font: bold 12px Arial;
+            color: #900;
+            border-bottom: 1px solid #999;
+            margin: 8px 0 3px;
+            padding-bottom: 2px;
+        }
+
+        .twocol {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .twocol td {
+            width: 50%;
+            vertical-align: top;
+            padding-right: 7px;
+        }
+
+        .twocol a {
+            display: block;
+            font-size: 10px;
+            line-height: 15px;
+        }
+
+        .footer {
+            border-top: 1px solid #999;
+            background: #ddd;
+            padding: 7px;
+            text-align: center;
+            color: #666;
+            font-size: 9px;
+        }
+
+        .counter {
+            font-family: "Courier New";
+            background: #111;
+            color: #0f0;
+            padding: 1px 3px;
+        }
+
+        input {
+            font: 10px Arial;
+            border: 1px solid #888;
+            width: 118px;
+            margin-bottom: 3px;
+        }
+
+        button {
+            font: 10px Arial;
+            border: 1px solid #666;
+            background: #ddd;
+            padding: 1px 7px;
+        }
+
+        .notice {
+            background: #fff8d7;
+            border: 1px dashed #999;
+            padding: 5px;
+            font-size: 9px;
+            margin-bottom: 7px;
+        }
+    </style>
+</head>
+<body>
+<div id="page">
+    <div id="head">
+        <div class="bar"></div>
+        <div class="title">UDAFF<span>.COM</span></div>
+        <div class="tag">Ресурс Удава :: Главная</div>
+        <div class="right">лучший сайт интернета<br/>с 2001 года</div>
+    </div>
+
+    <div id="body">
+        <table class="layout" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="left">
+                    <div class="box ud-aff-block">
+
+                        <div class="box">
+                            <div class="in">
+                                <div class="box ud-aff-block">
+                                    <div class="in">
+
+                                        <img
+                                                class="udaff-logo"
+                                                src="https://web.archive.org/web/20060821120604im_/http://udaff.com/images/logo.gif"
+                                                alt="UDAFF.COM"
+                                        >
+
+                                        <div class="poloji">
+                                            <img
+                                                    src="https://web.archive.org/web/20060821120604im_/http://udaff.com/images/poloji.gif"
+                                                    alt=""
+                                            >
+                                        </div>
+
+                                        <!-- форма входа -->
+                                        <form class="login-form" action="#" method="post">
+                                            <div class="login-title">вход для своих</div>
+
+                                            <input
+                                                    type="text"
+                                                    name="login"
+                                                    value=""
+                                                    placeholder="логин"
+                                            >
+
+                                            <input
+                                                    type="password"
+                                                    name="password"
+                                                    value=""
+                                                    placeholder="пароль"
+                                            >
+
+                                            <input
+                                                    type="submit"
+                                                    value="войти"
+                                            >
+
+                                            <div class="login-links">
+                                                <a href="#">регацца</a>
+                                                /
+                                                <a href="#">забыл пароль</a>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <div class="mission">Этот ресурс создан для настоящих падонков.<br/><br/>Те, кому не
+                                    нравяца слова ХУЙ и ПИЗДА, могут идти нахуй. Остальные пруцца!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="cap">быстрые ссылы</div>
+                            <div class="in menu">
+                                <a href="#">написать удаву</a>
+                                <a href="#">заслать креатифф</a>
+                                <a href="#">реклама на сайте</a>
+                                <a href="#">ф.а.к.</a>
+                                <a href="#">ссылы</a>
+                                <a href="#">пресса о нас</a>
+                                <a href="#">ин да flash</a>
+                                <a href="#">зона удава</a>
+                                <a href="#">зеркала</a>
+                                <a href="#">новости в жж</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="cap">вход для своих</div>
+                            <div class="in">
+                                <input type="text" value="логин"/><br/>
+                                <input type="text" value="пароль"/><br/>
+                                <button>войти</button>
+                                <div class="tiny" style="margin-top:4px"><a href="#">регацца</a> / <a href="#">забыл
+                                    пароль</a></div>
+                            </div>
+                        </div>
+                </td>
+
+                <td class="center">
+                    <div class="notice"><b>ВНИМАНИЕ!</b> Все ссылки в этой реконструкции пустые. Картинка встроена прямо
+                        в HTML, поэтому файл работает офлайн и ничего не подгружает с udaff.online.
+                    </div>
+                    <h1 id="main-title">EЖЕДНЕВНЫЕ К@РТИНКN</h1>
+                    <div class="meta">Смотри·слушай &gt; Ежедневные картинки :: 22-12-2005</div>
+
+                    <div class="creo">
+                        <img src="img/byla.jpg"/>
+                        <div class="caption">Ежедневная картинка. Комментарии в духе эпохи оставлены за пределами
+                            макета.
+                        </div>
+                    </div>
+                    <div class="pager">[ <a href="#">&laquo;&laquo;</a> ] &nbsp; [ <a href="#">&raquo;&raquo;</a> ]
+                    </div>
+
+                    <div class="section">Свежие поступления</div>
+                    <div class="twocol">
+                        <table class="twocol">
+                            <tr>
+                                <td>
+                                    <a href="#">Креативы</a>
+                                    <a href="#">Авторы</a>
+                                    <a href="#">Новости</a>
+                                    <a href="#">Ежедневные картинки</a>
+                                    <a href="#">Гастевуха утоп пасрать</a>
+                                    <a href="#">Комментарии к креативу</a>
+                                    <a href="#">Отчоты</a>
+                                    <a href="#">Письма читателей, блять</a>
+                                    <a href="#">Колонка Гаги II</a>
+                                    <a href="#">ЗА-лигали-ЗА</a>
+                                    <a href="#">Корзина хуятора</a>
+                                </td>
+                                <td>
+                                    <a href="#">Коротко о главном</a>
+                                    <a href="#">Полит.сру</a>
+                                    <a href="#">Полемика</a>
+                                    <a href="#">Взгляд из-за бугра</a>
+                                    <a href="#">Наши сказки</a>
+                                    <a href="#">Фкусно жрать</a>
+                                    <a href="#">Книжная полка</a>
+                                    <a href="#">Музыка на Удаве</a>
+                                    <a href="#">Спешите видеть!</a>
+                                    <a href="#">Мир, как мы его видим</a>
+                                    <a href="#">Спорт на Удаве</a>
+                                    <a href="#">Корзина рулит!</a>
+                                    <a href="#">Вопросы и ответы</a>
+                                    <a href="#">Gameсы</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+
+                <td class="right">
+                    <div class="box">
+                        <div class="cap">главное меню</div>
+                        <div class="in menu">
+                            <a href="#">Главная</a>
+                            <a href="#">Читай</a>
+                            <a href="#">Смотри·слушай</a>
+                            <a href="#">Развлекайся</a>
+                            <a href="#">Подключайся</a>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="cap">обсуждаемое</div>
+                        <div class="in tiny">
+                            <a href="#">первонах</a><br/>
+                            <a href="#">аффтар жжот</a><br/>
+                            <a href="#">камменты рулят</a><br/>
+                            <a href="#">йад в студию</a><br/>
+                            <a href="#">КГ/АМ</a>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="cap">статистика</div>
+                        <div class="in tiny">
+                            посетителей сегодня: <b>13 742</b><br/>
+                            сейчас на сайте: <b>47</b><br/>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="cap">баннер</div>
+                        <div class="in" style="text-align:center">
+                            <div style="border:1px solid #777;background:#eee;padding:10px 3px;font-weight:bold;font-size:10px">
+                                ВАША РЕКЛАМА<br/><span class="tiny">120 x 60</span></div>
+                            <br/><a class="tiny" href="#">разместить рекламу</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        UDAFF.COM © 2005 &nbsp;|&nbsp; <a href="#">о сайте</a> &nbsp;|&nbsp; <a href="#">контакты</a> &nbsp;|&nbsp; <a
+            href="#">реклама</a><br/>
+        best viewed in Internet Explorer 5.5+ &nbsp; 800x600
+    </div>
+</div>
+</body>
+</html>
